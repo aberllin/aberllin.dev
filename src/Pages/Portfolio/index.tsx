@@ -13,73 +13,90 @@ type PortfolioTypes = Array<{
 }>;
 
 const portfolioData: PortfolioTypes = [
-	{
-		title: 'MacOS-like Desktop on the web 🖥️',
-		image: '/images/desktop.png',
-		demoLink: 'https://apps-dashboard.netlify.app/',
-		githubLink: 'https://github.com/aberllin/react-apps-dashboard',
-		alt: 'image of macOs-like desktop',
-		description: (
-			<div>
-				<div>
+  {
+    title: 'MacOS-like Desktop on the web 🖥️',
+    image: '/images/desktop.png',
+    demoLink: 'https://apps-dashboard.netlify.app/',
+    githubLink: 'https://github.com/aberllin/react-apps-dashboard',
+    alt: 'image of macOs-like desktop',
+    description: (
+      <div>
+        <div>
           It is a replica of the desktop and window management experience in
           macOS. There is a working dock; windows can be opened from the dock,
           moved around, resized, maximized, and minimized.
-				</div>
-				<div>There are two working applications:</div>
-				<br />
-				<div>
+        </div>
+        <div>There are two working applications:</div>
+        <br />
+        <div>
           - Todo App, where you can write down your todos, edit them, delete or
           mark as DONE. They are stores at local storage.
-				</div>
-				<div>
+        </div>
+        <div>
           - GitHub Search app, which is an app to find user by login, allows
           adding to Favorite list.
-				</div>
-			</div>
-		),
-		technologies: 'React / Styled Components',
-	},
+        </div>
+      </div>
+    ),
+    technologies: 'React / Styled Components',
+  },
+  {
+    title: 'YelpCamp 🏕️',
+    image: '/images/view-desktop.png',
+    demoLink: 'https://yelp-camp-z1g5.onrender.com/',
+    githubLink: 'https://github.com/aberllin/YelpCamp',
+    alt: 'screenshot of view campground page',
+    description: (
+      <div>
+        YelpCamp, a comprehensive web application, allows users to both create
+        and review campgrounds. To engage in reviewing or creating a campground,
+        an account is required. This endeavor is a component of Colt Steele's
+        web development bootcamp course on Udemy.
+      </div>
+    ),
+    technologies:
+      'Node JS / Express / MongoDB / Bootstrap / Passport JS / EJS / MapBox',
+  },
 ];
 
-export const Portfolio = () => {
-	document.title = 'Aberllin: Portfolio';
-	return (
-		<>
-			{portfolioData.map(
-				({
-					title,
-					image,
-					description,
-					alt,
-					demoLink,
-					githubLink,
-					technologies,
-				}) => (
-						<Container key={title}>
-							<InfoWrapper>
-								<Title>{title}</Title>
-								<Description size="18px">{description}</Description>
-							</InfoWrapper>
-							<ProjectWrapper>
-								<Links>
-									<Link target="_blank" to={demoLink}>
-                    Demo
-									</Link>
-									<Link target="_blank" to={githubLink}>
-                    GitHub
-									</Link>
-								</Links>
-								<a href={demoLink}>
-									<Image src={image} alt={alt} />
-								</a>
-								<Technologies>{technologies}</Technologies>
-							</ProjectWrapper>
-						</Container>
-					)
-			)}
-		</>
-	);
+const Portfolio = () => {
+  document.title = 'Aberllin: Portfolio';
+  return (
+    <>
+      {portfolioData.map(
+        ({
+          title,
+          image,
+          description,
+          alt,
+          demoLink,
+          githubLink,
+          technologies,
+        }) => (
+          <Container key={title}>
+            <InfoWrapper>
+              <Title>{title}</Title>
+              <Description size="18px">{description}</Description>
+            </InfoWrapper>
+            <ProjectWrapper>
+              <Links>
+                <Link target="_blank" to={demoLink}>
+                  Demo
+                </Link>
+                <Link target="_blank" to={githubLink}>
+                  GitHub
+                </Link>
+              </Links>
+              <a href={demoLink}>
+                <Image src={image} alt={alt} />
+              </a>
+              <Technologies>{technologies}</Technologies>
+            </ProjectWrapper>
+          </Container>
+        ),
+      )}
+    </>
+  );
 };
 
 const Technologies = styled.div`
@@ -105,7 +122,7 @@ const ProjectWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 40px 0 40px 45px;
+  padding: 20px 0 20px 45px;
   border-left: 3px solid #1ccbb1;
   align-items: center;
 
@@ -176,7 +193,7 @@ const Container = styled.div`
   align-items: center;
   width: 80%;
   margin: auto;
-  padding-top: 100px;
+  padding: 50px 0;
   animation-name: fadeInFromNone;
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
