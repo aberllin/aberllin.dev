@@ -14,6 +14,58 @@ type PortfolioTypes = Array<{
 
 const portfolioData: PortfolioTypes = [
   {
+    title: 'Multi Step Form 👔',
+    image: '/images/multi-form-desktop.png',
+    demoLink: 'https://multi-form-aberllin.vercel.app/',
+    githubLink: 'https://github.com/aberllin/react-multi-step-form',
+    alt: 'screenshot of multi step form',
+    description: (
+      <div>
+      This is a solution to the <a style={{color: '#483EFF'}} target="_blank" rel="noreferrer" href='https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ'>Multi-step form challenge on Frontend Mentor</a>. 
+      Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+      <br />
+      <br />
+      Users should be able to:
+      <br />
+      - Complete each step of the sequence
+      <br />
+      - Go back to a previous step to update their selections
+      <br />
+      - See a summary of their selections on the final step and confirm their order
+      <br />
+      - View the optimal layout for the interface depending on their device's screen size
+      <br />
+      - See hover and focus states for all interactive elements on the page
+      <br />
+      - Receive form validation messages if:
+      <ol>
+       <li>A field has been missed </li>
+        <li>The email address is not formatted correctly </li>
+        <li>A step is submitted, but no selection has been made</li>
+        </ol>
+      </div>
+    ),
+    technologies:
+      'React / Typescript / Recoil / Styled-Components',
+  },
+  {
+    title: 'YelpCamp 🏕️',
+    image: '/images/view-desktop.png',
+    demoLink: 'https://yelp-camp-z1g5.onrender.com/',
+    githubLink: 'https://github.com/aberllin/YelpCamp',
+    alt: 'screenshot of view campground page',
+    description: (
+      <div>
+        YelpCamp, a comprehensive web application, allows users to both create
+        and review campgrounds. To engage in reviewing or creating a campground,
+        an account is required. This endeavor is a component of Colt Steele's
+        web development bootcamp course on Udemy.
+      </div>
+    ),
+    technologies:
+      'Node JS / Express / MongoDB / Bootstrap / Passport JS / EJS / MapBox',
+  },
+  {
     title: 'MacOS-like Desktop on the web 🖥️',
     image: '/images/desktop.png',
     demoLink: 'https://apps-dashboard.netlify.app/',
@@ -40,23 +92,7 @@ const portfolioData: PortfolioTypes = [
     ),
     technologies: 'React / Styled Components',
   },
-  {
-    title: 'YelpCamp 🏕️',
-    image: '/images/view-desktop.png',
-    demoLink: 'https://yelp-camp-z1g5.onrender.com/',
-    githubLink: 'https://github.com/aberllin/YelpCamp',
-    alt: 'screenshot of view campground page',
-    description: (
-      <div>
-        YelpCamp, a comprehensive web application, allows users to both create
-        and review campgrounds. To engage in reviewing or creating a campground,
-        an account is required. This endeavor is a component of Colt Steele's
-        web development bootcamp course on Udemy.
-      </div>
-    ),
-    technologies:
-      'Node JS / Express / MongoDB / Bootstrap / Passport JS / EJS / MapBox',
-  },
+ 
 ];
 
 const Portfolio = () => {
@@ -87,7 +123,7 @@ const Portfolio = () => {
                   GitHub
                 </Link>
               </Links>
-              <a href={demoLink}>
+              <a target="_blank"  rel="noreferrer" href={demoLink}>
                 <Image src={image} alt={alt} />
               </a>
               <Technologies>{technologies}</Technologies>
